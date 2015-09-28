@@ -177,7 +177,7 @@ Merge current branch with branch `<branchname>`.
 $ git clone <repository> [directory]
 ```
 Clone repository into given directory.    
-If`[directory]` is not given then git will try to make a new directory and the directory name is determined by `<repository>`.
+If `[directory]` is not given then git will try to make a new directory and the directory name is determined by `<repository>`.
 
 ###git pull
 ```bash

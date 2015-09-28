@@ -1,2 +1,2 @@
-# git-tutorial
-tutorial / cheatsheet for git for NTUCSIE pioneer camp
+# Git-tutorial
+Git tutorial / cheatsheet for NTUCSIE pioneer camp.

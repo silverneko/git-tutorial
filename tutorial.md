@@ -21,14 +21,14 @@ You can always google for some much more detailed tutorials.
 A distributed revision control system first developed by Linus Torvalds to manage the Linux kernel's source code.  
 Now a widely used tool to manage software projects.  
 
-##Pros
+###Pros
 * Fast and scalable.
 * Distributed: Easy to collaboration with others and development on local machine.
 * Versioning: Rollback to an earlier working version if you've messed up the code.
 * Branches: Smart workflow.
 * Stupid content tracker: Even monkeys know how to use it.
 
-##Cons
+###Cons
 * You have to learn it first.
 
 ##Install git
@@ -116,7 +116,7 @@ $ git commit --amend
 Commit the staged changes.  
 `-a` Automatically stages **tracked files** before commiting.  
 `-m <message>` Use `<message>` as the commit message.  
-`--amend` Replace the latest commit by a new commit. We often use this to fix typos in commit message. **USE WITH CAUTION!!!** *CHANGING THE HISTORY IS DANGEROUS, MAKE SURE YOU KNOW WHAT YOU'RE DOING*
+`--amend` Replace the latest commit by a new commit. We often use this to fix typos in commit message. **USE WITH CAUTION!!!** *CHANGING THE HISTORY IS DANGEROUS, MAKE SURE YOU KNOW WHAT YOU'RE DOING.*  
 
 ###git reset
 ```bash
@@ -227,6 +227,23 @@ $ git tag -d <tag name>
 ```
 Tag a commit.
 `-d` to delete a tag.
+
+##Common workflow
+```
+ 1.need new feature so open a feature branch
+  |              3.merge the completed feature back to master
+  v               v
+--+---+---+---+---+---+---+ master branch
+   \             /
+    \-+---+---+-/  feature branch
+      ^ 2.work on the new feature on a seperate branch
+```
+1. Open a new `feature` branch.
+2. Work on the new feature on `feature`, commit, testing, commit, debug, loop ...
+3. When the feature is complete, merge `feature` to `master`.
+4. Delete `feature` branch. (Optional)
+
+This way your not-yet-done work won't mess up with other collaborator's work, because everyone is working on their own branch and only working code would be merge back into `master`.
 
 ##References
 - Github's interactive git tutorial: https://try.github.io/levels/1/challenges/1

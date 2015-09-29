@@ -41,6 +41,10 @@ $ sudo apt-get install git
 ###If you're using CSIE workstation
 It's already installed.
 
+###If you're using mac
+1. Get homebrew.
+2. `$ brew install git`
+
 ###If you're using Windows
 Please don't use Windows.
 

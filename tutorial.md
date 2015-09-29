@@ -46,7 +46,9 @@ It's already installed.
 2. `$ brew install git`
 
 ###If you're using Windows
-Please don't use Windows.
+Please don't use Windows.  
+If you insist, this is the installer's link: https://git-scm.com/download/win  
+However, I strongly advise you to get used to a unix-like environment (e.g. csie workstation), because the reward will be tremendous.
 
 ##Github
 A popular git repo hosting site. Many open source projects are hosted here.  
@@ -119,7 +121,7 @@ $ git commit --amend
 ```
 Commit the staged changes.  
 `-a` Automatically stages **tracked files** before commiting.  
-`-m <message>` Use `<message>` as the commit message.  
+`-m <message>` Use `<message>` as the commit message. A meaningful message is always preferred.  
 `--amend` Replace the latest commit by a new commit. We often use this to fix typos in commit message. **USE WITH CAUTION!!!** *CHANGING THE HISTORY IS DANGEROUS, MAKE SURE YOU KNOW WHAT YOU'RE DOING.*  
 
 ###git reset
@@ -250,7 +252,8 @@ Tag a commit.
 This way your not-yet-done work won't mess up with other collaborator's work, because everyone is working on their own branch and only working code would be merge back into `master`.
 
 ##References
-- Github's interactive git tutorial: https://try.github.io/levels/1/challenges/1
 - Git's official documents, a bit prettier than man pages: http://git-scm.com/doc
+- Github's interactive git tutorial, try git: https://try.github.io/levels/1/challenges/1
 - Github's markdown guide, teachs you how to write in markdown: https://guides.github.com/features/mastering-markdown/
+- Random commit message generator: http://whatthecommit.com/
 

@@ -26,7 +26,7 @@ Now a widely used tool to manage software projects.
 * Distributed: Easy to collaboration with others and development on local machine.
 * Versioning: Rollback to an earlier working version if you've messed up the code.
 * Branches: Smart workflow.
-* Stupid content tracker: Even monkeys know how to use it.
+* Stupid content tracker: Even ~~EE students~~  monkeys know how to use it.
 
 ###Cons
 * You have to learn it first.
@@ -228,7 +228,7 @@ $ git tag -d <tag name>
 Tag a commit.
 `-d` to delete a tag.
 
-##Common workflow
+##Simple workflow
 ```
  1.need new feature so open a feature branch
   |              3.merge the completed feature back to master

@@ -147,11 +147,13 @@ There are a lot of options for this command, read more in `man git-log`.
 
 ###git diff
 ```bash
+$ git diff [--staged]
 $ git diff [commit1] [commit2]
 ```
-If no commits provided, show the diff of the working tree and the current branch. (i.e. show uncommit changes of current branch)  
+If no commits provided, show the diff of the working tree to the last commit. (i.e. show uncommit **unstaged** changes)  
+Add `--staged` to show the diff of uncommit **staged** changes.  
 If only `[commit1]` is provided, show the diff of the working tree and `[commit1]`.  
-If `[commit1]` and `[commit2]` are provided, show the diff of the two commits.
+If `[commit1]` and `[commit2]` are provided, show the diff of the two commits.  
 
 ###git branch
 ```bash

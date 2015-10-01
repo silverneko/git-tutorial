@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Git-tutorial by silverneko</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Git-tutorial</h1>
+      <h2 class="project-tagline">Git tutorial / cheatsheet for NTUCSIE pioneer camp.</h2>
+      <a href="https://github.com/silverneko/git-tutorial" class="btn">View on GitHub</a>
+      <a href="https://github.com/silverneko/git-tutorial/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/silverneko/git-tutorial/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="preface" class="anchor" href="#preface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preface</h2>
+
+<p>This is intended to be a brief introduction to <code>git</code>.<br>
+Every git command has it's own man page in the format of <code>git-&lt;command&gt;</code> (e.g. <code>man git-add</code>).<br>
+You can always google for some much more detailed tutorials.</p>
+
+<h2>
+<a id="what-is-git" class="anchor" href="#what-is-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is git</h2>
+
+<blockquote>
+<p><em>git - the stupid content tracker</em></p>
+
+<p>"git" can mean anything, depending on your mood.  </p>
+
+<ul>
+<li>random three-letter combination that is pronounceable, and not
+actually used by any common UNIX command.  The fact that it is a
+mispronunciation of "get" may or may not be relevant.</li>
+<li>stupid. contemptible and despicable. simple. Take your pick from the
+dictionary of slang.</li>
+<li>"global information tracker": you're in a good mood, and it actually
+works for you. Angels sing, and a light suddenly fills the room.</li>
+<li>"goddamn idiotic truckload of sh*t": when it breaks</li>
+</ul>
+
+<p><em>from <a href="https://github.com/git/git#readme">https://github.com/git/git#readme</a></em></p>
+</blockquote>
+
+<p>A distributed revision control system first developed by Linus Torvalds to manage the Linux kernel's source code.<br>
+Now a widely used tool to manage software projects.  </p>
+
+<h3>
+<a id="pros" class="anchor" href="#pros" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pros</h3>
+
+<ul>
+<li>Fast and scalable.</li>
+<li>Distributed: Easy to collaboration with others and development on local machine.</li>
+<li>Versioning: Rollback to an earlier working version if you've messed up the code.</li>
+<li>Branches: Smart workflow.</li>
+<li>Stupid content tracker: Even <del>EE students</del>  monkeys know how to use it.</li>
+</ul>
+
+<h3>
+<a id="cons" class="anchor" href="#cons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cons</h3>
+
+<ul>
+<li>You have to learn it first.</li>
+</ul>
+
+<h2>
+<a id="install-git" class="anchor" href="#install-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install git</h2>
+
+<h3>
+<a id="if-youre-using-ubuntu" class="anchor" href="#if-youre-using-ubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you're using Ubuntu</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ sudo add-apt-repository ppa:git-core/ppa
+$ sudo apt-get update
+$ sudo apt-get install git</pre></div>
+
+<h3>
+<a id="if-youre-using-csie-workstation" class="anchor" href="#if-youre-using-csie-workstation" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you're using CSIE workstation</h3>
+
+<p>It's already installed.</p>
+
+<h3>
+<a id="if-youre-using-mac" class="anchor" href="#if-youre-using-mac" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you're using mac</h3>
+
+<ol>
+<li>Get homebrew.</li>
+<li><code>$ brew install git</code></li>
+</ol>
+
+<h3>
+<a id="if-youre-using-windows" class="anchor" href="#if-youre-using-windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you're using Windows</h3>
+
+<p>Please don't use Windows.<br>
+If you insist, this is the installer's link: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a><br>
+However, I strongly advise you to get used to a unix-like environment (e.g. csie workstation), because the reward will be tremendous.</p>
+
+<h2>
+<a id="github" class="anchor" href="#github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Github</h2>
+
+<p>A popular git repo hosting site. Many open source projects are hosted here.<br>
+<del>Social network for geeks</del><br>
+Anyone can host <em>unlimited</em> number of git repos for <em>free</em> as long as the repo is public.<br>
+However, you can get the student pack (<a href="https://education.github.com/pack">https://education.github.com/pack</a>) and you get 5 <em>free</em> <em>private</em> repos and a bunch of coupons.<br>
+This tutorial is also hosted on github: <a href="https://github.com/silverneko/git-tutorial">https://github.com/silverneko/git-tutorial</a>  </p>
+
+<p>Bitbucket is another git hosting site and it offers free <em>private</em> repos, 
+but it has limitation on number of collaborators.</p>
+
+<h2>
+<a id="how-to-use-git" class="anchor" href="#how-to-use-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use git</h2>
+
+<p>Lines starting with a dollar sign are shell commands.<br>
+Options quoted with square brackets means it's optional.<br>
+Options quoted with angle brackets means it's a must.  </p>
+
+<h3>
+<a id="git-config" class="anchor" href="#git-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git config [--global] user.name  <span class="pl-k">&lt;</span>INSERT NAME HERE<span class="pl-k">&gt;</span>
+$ git config [--global] user.email <span class="pl-k">&lt;</span>INSERT EMAIL HERE<span class="pl-k">&gt;</span>
+$ git config [--global] push.default simple
+$ git config [--global] core.editor <span class="pl-k">&lt;</span>INSERT YOUR FAVORITE TEXT EDITOR HERE<span class="pl-k">&gt;</span></pre></div>
+
+<p>Set/query git configs.<br>
+Drop the <code>--global</code> option if you only want to change the config for current repo.</p>
+
+<h3>
+<a id="git-init" class="anchor" href="#git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>git init</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git init [directory]</pre></div>
+
+<p>Creates a git repository. Make a directory into a git repository.<br>
+If <code>path name</code> is empty then it will init in the current directory.</p>
+
+<h3>
+<a id="git-status" class="anchor" href="#git-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>git status</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git status</pre></div>
+
+<p>Show the status.</p>
+
+<h3>
+<a id="git-add" class="anchor" href="#git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>git add</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git add <span class="pl-k">&lt;</span>file <span class="pl-k">|</span> directory<span class="pl-k">&gt;</span>
+$ git add <span class="pl-c1">.</span>
+$ git add --all</pre></div>
+
+<p>Stage the changes.<br>
+The first command adds files/directories into staging area.<br>
+The second command stages <strong>everything</strong> in the working tree. <strong>USE WITH CAUTION!!!</strong><br>
+The third command stages everything and do <code>git rm</code> on removed files for you.</p>
+
+<h3>
+<a id="git-rm" class="anchor" href="#git-rm" aria-hidden="true"><span class="octicon octicon-link"></span></a>git rm</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git rm [--cached] <span class="pl-k">&lt;</span>file<span class="pl-k">&gt;</span>
+$ git rm [--cached] -r <span class="pl-k">&lt;</span>directory<span class="pl-k">&gt;</span></pre></div>
+
+<p>Delete files/directories from git's tracking list and working tree.<br>
+Add <code>--cached</code> to remove <em>only</em> from the tracking list. (i.e. Untrack a file but don't delete it from working tree)</p>
+
+<h3>
+<a id="git-mv" class="anchor" href="#git-mv" aria-hidden="true"><span class="octicon octicon-link"></span></a>git mv</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git mv <span class="pl-k">&lt;</span>file<span class="pl-k">&gt;</span> <span class="pl-k">&lt;</span>path<span class="pl-k">&gt;</span></pre></div>
+
+<p>It kinds of explains itself already.</p>
+
+<h3>
+<a id="git-commit" class="anchor" href="#git-commit" aria-hidden="true"><span class="octicon octicon-link"></span></a>git commit</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git commit [-a] [-m <span class="pl-k">&lt;</span>message<span class="pl-k">&gt;</span>]
+$ git commit --amend</pre></div>
+
+<p>Commit the staged changes.<br>
+<code>-a</code> Automatically stages <strong>tracked files</strong> before commiting.<br>
+<code>-m &lt;message&gt;</code> Use <code>&lt;message&gt;</code> as the commit message. A meaningful message is always preferred.<br>
+<code>--amend</code> Replace the latest commit by a new commit. We often use this to fix typos in commit message. <strong>USE WITH CAUTION!!!</strong> <em>CHANGING THE HISTORY IS DANGEROUS, MAKE SURE YOU KNOW WHAT YOU'RE DOING.</em>  </p>
+
+<h3>
+<a id="git-reset" class="anchor" href="#git-reset" aria-hidden="true"><span class="octicon octicon-link"></span></a>git reset</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git reset [file]
+$ git reset [--soft<span class="pl-k">|</span>--mixed<span class="pl-k">|</span>--hard<span class="pl-k">|</span>...] <span class="pl-k">&lt;</span>commit<span class="pl-k">&gt;</span></pre></div>
+
+<p>The first command removes files from staging area. (i.e. the opposite of <code>git add</code>)<br>
+The second command rewrites commits like <code>git commit --amend</code>, read more in <code>man git-reset</code>. <strong>BE EXTRA CAUTION AS YOU ARE REWRITING HISTORY (AGAIN)</strong>  </p>
+
+<h3>
+<a id="git-show" class="anchor" href="#git-show" aria-hidden="true"><span class="octicon octicon-link"></span></a>git show</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git show</pre></div>
+
+<p>Shows many things. Try it yourself.</p>
+
+<h3>
+<a id="git-log" class="anchor" href="#git-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>git log</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git log [--all] [--stat] [--decorate] [--graph] [--pretty=<span class="pl-k">&lt;</span>oneline<span class="pl-k">|</span>short<span class="pl-k">|</span>...<span class="pl-k">&gt;</span>]</pre></div>
+
+<p>Show the commit log.<br>
+There are a lot of options for this command, read more in <code>man git-log</code>.</p>
+
+<h3>
+<a id="git-diff" class="anchor" href="#git-diff" aria-hidden="true"><span class="octicon octicon-link"></span></a>git diff</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git diff [--staged]
+$ git diff [commit1] [commit2]</pre></div>
+
+<p>If no commits provided, show the diff of the working tree to the last commit. (i.e. show uncommit <strong>unstaged</strong> changes)<br>
+Add <code>--staged</code> to show the diff of uncommit <strong>staged</strong> changes.<br>
+If only <code>[commit1]</code> is provided, show the diff of the working tree and <code>[commit1]</code>.<br>
+If <code>[commit1]</code> and <code>[commit2]</code> are provided, show the diff of the two commits.  </p>
+
+<h3>
+<a id="git-branch" class="anchor" href="#git-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>git branch</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git branch [-v]</pre></div>
+
+<p>List all branches.<br>
+Add <code>-v</code> for verbose.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git branch [-u <span class="pl-k">&lt;</span>upstream<span class="pl-k">&gt;</span>] <span class="pl-k">&lt;</span>branchname<span class="pl-k">&gt;</span></pre></div>
+
+<p>Create new branch <code>&lt;branchname&gt;</code>.<br>
+Add <code>-u</code> to also set it's upstream to <code>&lt;upstream&gt;</code>.</p>
+
+<h3>
+<a id="git-checkout" class="anchor" href="#git-checkout" aria-hidden="true"><span class="octicon octicon-link"></span></a>git checkout</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git checkout <span class="pl-k">&lt;</span>branch<span class="pl-k">|</span>commit<span class="pl-k">&gt;</span></pre></div>
+
+<p>Change current branch or checkout a commit.</p>
+
+<h3>
+<a id="git-merge" class="anchor" href="#git-merge" aria-hidden="true"><span class="octicon octicon-link"></span></a>git merge</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git merge <span class="pl-k">&lt;</span>branchname<span class="pl-k">&gt;</span></pre></div>
+
+<p>Merge current branch with branch <code>&lt;branchname&gt;</code>.</p>
+
+<h3>
+<a id="git-clone" class="anchor" href="#git-clone" aria-hidden="true"><span class="octicon octicon-link"></span></a>git clone</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone <span class="pl-k">&lt;</span>repository<span class="pl-k">&gt;</span> [directory]</pre></div>
+
+<p>Clone repository into given directory.<br>
+If <code>[directory]</code> is not given then git will try to make a new directory and the directory name is determined by <code>&lt;repository&gt;</code>.</p>
+
+<h3>
+<a id="git-pull" class="anchor" href="#git-pull" aria-hidden="true"><span class="octicon octicon-link"></span></a>git pull</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git pull [remote] [branch]</pre></div>
+
+<p>Pull remote changes and apply it to the current branch.<br>
+If <code>[remote]</code> and <code>[branch]</code> are omitted, git will pull from current branch's upstream.</p>
+
+<h3>
+<a id="git-push" class="anchor" href="#git-push" aria-hidden="true"><span class="octicon octicon-link"></span></a>git push</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git push [remote] [branch]</pre></div>
+
+<p>Push local changes to remote branch.<br>
+If you've set <code>push.default</code> to <code>simple</code> then <code>[remote]</code> and <code>[branch]</code> can be omitted and it'll push to current branch's upstream.</p>
+
+<h3>
+<a id="git-stash" class="anchor" href="#git-stash" aria-hidden="true"><span class="octicon octicon-link"></span></a>git stash</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git stash [--all]</pre></div>
+
+<p>Stash uncommited changes and turn working tree <em>clean</em>.<br>
+Use <code>--all</code> to stash <em>untracked</em> files, too.</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git stash pop</pre></div>
+
+<p>Restore stashed.</p>
+
+<p>We often use <code>git stash</code> before <code>git pull</code> because <code>git pull</code> requires a clean working tree.
+A clean working tree can be obtained by doing a <code>git commit</code>, but sometimes the changes on working tree are too minor to commit.
+In such cases we can do something like:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git stash --all          <span class="pl-c"># stash the dirty tree</span>
+$ git pull origin master   <span class="pl-c"># get new changes from your co-workers</span>
+$ git stash pop            <span class="pl-c"># restore your working tree and continue working</span></pre></div>
+
+<h3>
+<a id="git-blame" class="anchor" href="#git-blame" aria-hidden="true"><span class="octicon octicon-link"></span></a>git blame</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git blame <span class="pl-k">&lt;</span>file<span class="pl-k">&gt;</span></pre></div>
+
+<p>Show what revision and author last modified each line of a file.</p>
+
+<h3>
+<a id="git-tag" class="anchor" href="#git-tag" aria-hidden="true"><span class="octicon octicon-link"></span></a>git tag</h3>
+
+<div class="highlight highlight-source-shell"><pre>$ git tag -a <span class="pl-k">&lt;</span>tag name<span class="pl-k">&gt;</span> [-m <span class="pl-k">&lt;</span>message<span class="pl-k">&gt;</span>] [commit]
+$ git tag -d <span class="pl-k">&lt;</span>tag name<span class="pl-k">&gt;</span></pre></div>
+
+<p>Tag a commit.
+<code>-d</code> to delete a tag.</p>
+
+<h2>
+<a id="simple-workflow" class="anchor" href="#simple-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple workflow</h2>
+
+<pre><code> 1.need new feature so open a feature branch
+  |              3.merge the completed feature back to master
+  v               v
+--+---+---+---+---+---+---+ master branch
+   \             /
+    \-+---+---+-/  feature branch
+      ^ 2.work on the new feature on a seperate branch
+</code></pre>
+
+<ol>
+<li>Open a new <code>feature</code> branch.</li>
+<li>Work on the new feature on <code>feature</code>, commit, testing, commit, debug, loop ...</li>
+<li>When the feature is complete, merge <code>feature</code> to <code>master</code>.</li>
+<li>Delete <code>feature</code> branch. (Optional)</li>
+</ol>
+
+<p>This way your not-yet-done work won't mess up with other collaborator's work, because everyone is working on their own branch and only working code would be merge back into <code>master</code>.</p>
+
+<h2>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+
+<ul>
+<li>Git's official documents, a bit prettier than man pages: <a href="http://git-scm.com/doc">http://git-scm.com/doc</a>
+</li>
+<li>Github's interactive git tutorial, try git: <a href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a>
+</li>
+<li>Github's markdown guide, teachs you how to write in markdown: <a href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a>
+</li>
+<li>Random commit message generator: <a href="http://whatthecommit.com/">http://whatthecommit.com/</a>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/silverneko/git-tutorial">Git-tutorial</a> is maintained by <a href="https://github.com/silverneko">silverneko</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
